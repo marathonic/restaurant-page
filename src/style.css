@@ -1,0 +1,14 @@
+.hello {
+    color: black;
+    font-size: 200px;
+    /* background: url('./ryuzaki.jpg'); */
+}
+
+img {
+    min-height: auto;
+    min-width: auto;
+}
+
+h1 {
+    font-size: 100px;
+}
