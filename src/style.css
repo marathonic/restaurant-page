@@ -1,3 +1,16 @@
+*, *::after, *::before {
+    box-sizing: border-box;
+}
+
+:root {
+    --cool-mustard: #ebe98c;
+    --cool-beige: #e6e0c8;
+}
+
+body {
+    margin: 0;
+}
+
 .hello {
     color: black;
     font-size: 200px;
@@ -11,4 +24,52 @@ img {
 
 h1 {
     font-size: 100px;
+}
+
+.background {
+    background-color: var(--cool-beige);
+    min-width: 100vw;
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: 1fr 1fr 4fr 1fr;
+    grid-template-columns: 1fr 3fr 1fr;
+
+}
+
+.header-bar {
+    display: flex;
+    background-color: var(--cool-mustard);
+    grid-column: 2;
+    border-radius: 16px;
+}
+
+/* .header-bg {
+} */
+
+.separator-div {
+    grid-column: 2;
+    grid-row: 2;
+    display: flex;
+    align-items: center;
+
+}
+
+.small-icon {
+    max-width: 50%;
+    max-height: 50%;
+}
+
+.header-sections {
+    display: flex;
+    background-color: whitesmoke;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.menu-language-text {
+    font-family: Arial, Helvetica, sans-serif;
+    color: rebeccapurple;
+    font-size: 42px;
+    font-weight: bold;
 }

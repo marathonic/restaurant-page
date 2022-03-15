@@ -1,9 +1,21 @@
 const path = require('path');
+//SET UP HTML LOADER!!! SEE IF THAT FIXES OUR PROBLEM
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-    entry: './src/index.js',
+    mode: 'development',
+    entry: {
+        index: './src/index.js',
+        pageload: './src/page-load.js',
+    },
+    devtool: 'inline-source-map',
+    plugins: [
+            new HtmlWebpackPlugin({
+                title: 'Testing Development',
+            }),
+    ],
     output: {
-        filename: 'bundle.js',
+        filename: '[name].bundle.js',
         path: path.resolve(__dirname, 'dist'),
     },
     module: {
