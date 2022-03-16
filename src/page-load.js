@@ -14,6 +14,8 @@ import EngMenu from './img/menu-select/en.jpg';
 import KorMenu from './img/menu-select/kor.jpg';
 
 
+import ShopIcon from './img/icons/shop-solid.svg';
+
 // WE MAY VERY WELL WISH TO SEPARATE THIS INTO 
 // SEVERAL SMALLER FUNCTIONS, EACH APPENDING SOMETHING
 // TO OUR BACKGROUND. THEN, RUN ALL THE FUNCTIONS IN INDEX.JS
@@ -57,9 +59,15 @@ export function pageLoad() {
     ulNav.appendChild(liNavOne);
     
     const liNavTwo = document.createElement('li');
-    const storeNav = document.createElement('a');
-    storeNav.innerHTML = 'Store locator';
-    liNavTwo.appendChild(storeNav);
+    const shopNav = document.createElement('a');
+    const iconNavTwo = document.createElement('li');
+    const shopIcon = new Image();
+    shopIcon.src = ShopIcon;
+    shopIcon.classList.add('svg');
+
+    shopNav.innerHTML = 'Store locator';
+    liNavTwo.appendChild(shopNav);
+    ulNav.appendChild(shopIcon)
     ulNav.appendChild(liNavTwo);
 
     
@@ -149,8 +157,11 @@ export function pageLoad() {
     menuRightHalf.appendChild(selectedMenuLanguage);  
     
     //FOOD GRID! 
-    const foodGrid = document.createElement('div');
-    foodGrid.classList.add('food-grid');
+    const foodGridInner = document.createElement('div');
+    foodGridInner.classList.add('food-grid-inner');
+
+    const foodGridOuter = document.createElement('div');
+    foodGridOuter.classList.add('food-grid-outer');
 
     const gyumeshi = new Image();
     gyumeshi.src = Gyumeshi;
@@ -178,15 +189,16 @@ export function pageLoad() {
     drinks.src = Drinks;
 
     // APPEND DISHES TO FOODGRID!
-    foodGrid.appendChild(gyumeshi);
-    foodGrid.appendChild(curry);
-    foodGrid.appendChild(bowl);
-    foodGrid.appendChild(setMeal);
-    foodGrid.appendChild(morningMeal);
-    foodGrid.appendChild(sideDishes);
-    foodGrid.appendChild(toppings);
-    foodGrid.appendChild(drinks);
-    menuRightHalf.appendChild(foodGrid);
+    foodGridInner.appendChild(gyumeshi);
+    foodGridInner.appendChild(curry);
+    foodGridInner.appendChild(bowl);
+    foodGridInner.appendChild(setMeal);
+    foodGridInner.appendChild(morningMeal);
+    foodGridInner.appendChild(sideDishes);
+    foodGridInner.appendChild(toppings);
+    foodGridInner.appendChild(drinks);
+    foodGridOuter.appendChild(foodGridInner);
+    menuRightHalf.appendChild(foodGridOuter);
 
     //add images to dish divs!
 

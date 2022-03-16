@@ -89,24 +89,26 @@ h1 {
     min-width: auto;
     padding-top: 50px;
     margin: 0 auto;
+    display: flex;
+    justify-content: space-evenly;
 }
 
 .main-header .container {
     display: flex;
+    min-width: max-content;
     /* align-items: center; */
-    justify-content: space-around;
     flex-wrap: wrap;
 }
 
 
 .main-nav {
     background-color: whitesmoke;
+    min-width: max-content;
     border-radius: 12px;
 }
 
 .main-nav ul {
     margin: 1em 0 0.5em;
-    text-align: center;
 }
 
 .main-nav li {
@@ -114,8 +116,7 @@ h1 {
 }
 
 .main-nav a {
-    display: inline-block;
-    padding: 10px;
+    padding: 5px;
 }
 
 
@@ -192,36 +193,45 @@ h1 {
     align-items: center;
     margin-top: -10px;
     border-radius: 10px;
+    border-bottom: solid whitesmoke 3px;
+    border-right: solid whitesmoke 3px;
+    box-shadow: 1px 4px 4px gainsboro;
 }
 
-.food-grid {
+.food-grid-outer {
     background-color: whitesmoke;
     grid-row: 2;
-    display: flex;
-    justify-content: space-around;
-    align-items:center;
-    border: solid black 1px;
     margin-top: 15px;
     padding: 20px;
-    flex-wrap: wrap;
-
 }
 
 .food-grid-inner {
-    background-color: whitesmoke;
-    grid-row: 2;
+    background-color: var(--cool-beige);
     display: flex;
+    align-items: flex-end;
     justify-content: space-around;
-    align-items:center;
-    border: solid black 1px;
-    margin-top: 15px;
-    padding: 20px;
+    padding: 3px;
+    padding-bottom: 10px;
     flex-wrap: wrap;
+    border-radius: 4px;
 
 }
 
-.food-grid > img {
-    margin: 10px;
+.food-grid-inner > img {
+    margin: 2px;
+    margin-top: 10px;
+    border-radius: 10px;
+    margin-left: 3px;
+    z-index: 3;
+}
+
+.food-grid-inner > img:hover {
+    cursor: pointer;
+}
+
+.svg {
+    max-width: 20px;
+    max-height: 20px;
 }
 
 /* WE'RE TESTING HOW WE'RE GOING TO APPLY THE IMAGES
