@@ -131,14 +131,29 @@ export function pageLoad() {
     selectedMenuLanguage.innerHTML = 'English Menu';
     menuRightHalf.appendChild(selectedMenuLanguage);  
     
-    // const gyumeshi = document.createElement('div');
-    // const curry = document.createElement('div');
-    // const bbq = document.createElement('div');
-    // const setMeal = document.createElement('div');
-    // const morningMeal = document.createElement('div');
-    // const sideDish = document.createElement('div');
-    // const toppings = document.createElement('div');
-    // const drinks = document.createElement('div');
+    //FOOD GRID! 
+    const foodGrid = document.createElement('div');
+    foodGrid.classList.add('food-grid');
+
+    const gyumeshi = document.createElement('div');
+    const curry = document.createElement('div');
+    const bbq = document.createElement('div');
+    const setMeal = document.createElement('div');
+    const morningMeal = document.createElement('div');
+    const sideDish = document.createElement('div');
+    const toppings = document.createElement('div');
+    const drinks = document.createElement('div');
+
+    // APPEND DISHES TO FOODGRID!
+    foodGrid.appendChild(gyumeshi);
+    foodGrid.appendChild(curry);
+    foodGrid.appendChild(bbq);
+    foodGrid.appendChild(setMeal);
+    foodGrid.appendChild(morningMeal);
+    foodGrid.appendChild(sideDish);
+    foodGrid.appendChild(toppings);
+    foodGrid.appendChild(drinks);
+    menuRightHalf.appendChild(foodGrid);
 
 
 
