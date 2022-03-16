@@ -4,6 +4,19 @@ import Logo from './matsuya-logo.gif';
 import Gyumeshi from './img/menu-eng/gyumeshi.jpg';
 import Curry from './img/menu-eng/curry.png';
 import Bowl from './img/menu-eng/bowl.png';
+import SetMeals from './img/menu-eng/set-meals.png';
+import MorningMeals from './img/menu-eng/morning-meals.png';
+import SideDishes from './img/menu-eng/side-dishes.png';
+import Toppings from './img/menu-eng/toppings.png';
+import Drinks from './img/menu-eng/drinks.png';
+
+import EngMenu from './img/menu-select/en.jpg';
+import KorMenu from './img/menu-select/kor.jpg';
+
+
+// WE MAY VERY WELL WISH TO SEPARATE THIS INTO 
+// SEVERAL SMALLER FUNCTIONS, EACH APPENDING SOMETHING
+// TO OUR BACKGROUND. THEN, RUN ALL THE FUNCTIONS IN INDEX.JS
 
 export function pageLoad() {
     // alert('TEST');
@@ -116,13 +129,14 @@ export function pageLoad() {
 
     const menuLefttHalf = document.createElement('div');
     menuLefttHalf.classList.add('menu-left');
-    const englishMenu = document.createElement('div');
-    const koreanMenu = document.createElement('div');
+    const englishMenu = new Image();
+    englishMenu.src = EngMenu;
+
+    const koreanMenu = new Image();
+    koreanMenu.src = KorMenu;
+    
     const spanishMenu = document.createElement('div');
 
-    englishMenu.classList.add('english-menu');
-    koreanMenu.classList.add('korean-menu');
-    spanishMenu.classList.add('spanish-menu');
     menuLefttHalf.appendChild(englishMenu);
     menuLefttHalf.appendChild(koreanMenu);
     menuLefttHalf.appendChild(spanishMenu);
@@ -138,10 +152,11 @@ export function pageLoad() {
     const foodGrid = document.createElement('div');
     foodGrid.classList.add('food-grid');
 
-    const gyumeshi = document.createElement('div');
-    const curry = new Image();
-
+    const gyumeshi = new Image();
+    gyumeshi.src = Gyumeshi;
+    
     //TRYING OUT SECOND IMG METHOD
+    const curry = new Image();
     curry.src = Curry;
 
     //THIS SECOND WAY LOOKS A LOT BETTER!
@@ -149,11 +164,18 @@ export function pageLoad() {
 
     const bowl = new Image();
     bowl.src = Bowl;
-    const setMeal = document.createElement('div');
-    const morningMeal = document.createElement('div');
-    const sideDish = document.createElement('div');
-    const toppings = document.createElement('div');
-    const drinks = document.createElement('div');
+    const setMeal = new Image();
+    setMeal.src = SetMeals;
+    const morningMeal = new Image();
+    morningMeal.src = MorningMeals;
+
+    const sideDishes = new Image();
+    sideDishes.src = SideDishes;
+    const toppings = new Image();
+    toppings.src = Toppings;
+
+    const drinks = new Image();
+    drinks.src = Drinks;
 
     // APPEND DISHES TO FOODGRID!
     foodGrid.appendChild(gyumeshi);
@@ -161,7 +183,7 @@ export function pageLoad() {
     foodGrid.appendChild(bowl);
     foodGrid.appendChild(setMeal);
     foodGrid.appendChild(morningMeal);
-    foodGrid.appendChild(sideDish);
+    foodGrid.appendChild(sideDishes);
     foodGrid.appendChild(toppings);
     foodGrid.appendChild(drinks);
     menuRightHalf.appendChild(foodGrid);
