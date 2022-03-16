@@ -1,6 +1,9 @@
 import './style.css';
 import Ramen from './ramen-icon.png';
 import Logo from './matsuya-logo.gif';
+import Gyumeshi from './img/menu-eng/gyumeshi.jpg';
+import Curry from './img/menu-eng/curry.png';
+import Bowl from './img/menu-eng/bowl.png';
 
 export function pageLoad() {
     // alert('TEST');
@@ -136,8 +139,16 @@ export function pageLoad() {
     foodGrid.classList.add('food-grid');
 
     const gyumeshi = document.createElement('div');
-    const curry = document.createElement('div');
-    const bbq = document.createElement('div');
+    const curry = new Image();
+
+    //TRYING OUT SECOND IMG METHOD
+    curry.src = Curry;
+
+    //THIS SECOND WAY LOOKS A LOT BETTER!
+
+
+    const bowl = new Image();
+    bowl.src = Bowl;
     const setMeal = document.createElement('div');
     const morningMeal = document.createElement('div');
     const sideDish = document.createElement('div');
@@ -147,13 +158,26 @@ export function pageLoad() {
     // APPEND DISHES TO FOODGRID!
     foodGrid.appendChild(gyumeshi);
     foodGrid.appendChild(curry);
-    foodGrid.appendChild(bbq);
+    foodGrid.appendChild(bowl);
     foodGrid.appendChild(setMeal);
     foodGrid.appendChild(morningMeal);
     foodGrid.appendChild(sideDish);
     foodGrid.appendChild(toppings);
     foodGrid.appendChild(drinks);
     menuRightHalf.appendChild(foodGrid);
+
+    //add images to dish divs!
+
+    // Let's compare two ways of doing this:
+
+    //We have placed the 1st dish as a bg img on the CSS.
+    //We can also just switch the createElement('div')'s for
+    //createElement('img') and see what happens 
+
+
+    // const gyumeshiPic = new Image();
+    // gyumeshi.src = Gyumeshi;
+    
 
 
 
