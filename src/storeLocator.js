@@ -113,6 +113,6 @@ export default function storeLocator() {
     background.appendChild(separatorDiv);
     background.appendChild(menuContainer);
     
-    return content;
+    return background;
 
 }

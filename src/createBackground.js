@@ -12,5 +12,5 @@ export default function createBackground() {
     const header = document.querySelector('#m-header');
     header.appendChild(backgroundLayout);
 
-    return backgroundLayout;
+    return header;
 }

@@ -122,6 +122,7 @@ export default function pageLoad() {
 
     //class lists
     background.classList.add('background-invisible');
+    background.id = 'background-grid'
 
 
     // main.appendChild(background);
@@ -130,8 +131,17 @@ export default function pageLoad() {
     separatorDiv.appendChild(ramenIcon);
     separatorDiv.appendChild(menuLanguageText);
     background.appendChild(separatorDiv);
-    background.appendChild(menuContainer);
-    bgLayout.appendChild(content);  
+
+    
+    content.appendChild(menuContainer);
+  
+    const header = document.querySelector('#m-header');
+    header.appendChild(backgroundLayout);
+
+
+    background.appendChild(content);
+    // bgLayout.appendChild(content);  
+    bgLayout.appendChild(background)
 
     return bgLayout;
 } 

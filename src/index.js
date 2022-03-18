@@ -13,7 +13,7 @@ import createBackground from './createBackground';
 window.addEventListener('DOMContentLoaded', function() {
     document.body.appendChild(createHeader());
     document.body.appendChild(createBackground());
-    pageLoad();
+    document.body.appendChild(pageLoad());
 })
 
 // window.addEventListener('DOMContentLoaded', pageLoad());
