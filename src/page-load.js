@@ -1,6 +1,5 @@
 import './style.css';
 import Ramen from './ramen-icon.png';
-import Logo from './matsuya-logo.gif';
 import Gyumeshi from './img/menu-eng/gyumeshi.jpg';
 import Curry from './img/menu-eng/curry.png';
 import Bowl from './img/menu-eng/bowl.png';
@@ -13,97 +12,18 @@ import Drinks from './img/menu-eng/drinks.png';
 import EngMenu from './img/menu-select/en.jpg';
 import KorMenu from './img/menu-select/kor.jpg';
 
+//pageLoad contains our menu! We'll rename it menu() later;
 
-
-// WE MAY VERY WELL WISH TO SEPARATE THIS INTO 
-// SEVERAL SMALLER FUNCTIONS, EACH APPENDING SOMETHING
-// TO OUR BACKGROUND. THEN, RUN ALL THE FUNCTIONS IN INDEX.JS
 
 export default function pageLoad() {
     // alert('TEST');
     const content = document.createElement('div');
     document.body.appendChild(content);
+
+
+    const bgLayout = document.querySelector('#bg-layout');
     const background = document.createElement('div');
 
-    //Navigation bar, or container
-    // const headerBackground = document.createElement('div');
-    //                     headerBackground.classList.add('header-bar');
-
-    //the matsuya logo
-    const matsuyaLogo = new Image();
-    matsuyaLogo.src = Logo; 
-    matsuyaLogo.classList.add('small-icon')
-
-
-    //main header
-    const mainHeader = document.createElement('header');
-    mainHeader.classList.add('main-header');
-
-    //container
-    const container = document.createElement('div');
-    container.classList.add('container');
-    container.appendChild(matsuyaLogo);
-
-    //navigation bar
-    const mainNav = document.createElement('nav');
-    mainNav.classList.add('main-nav');
-    
-    const ulNav = document.createElement('ul');
-    ulNav.classList.add('main-nav-list');
-    
-    const liNavOne = document.createElement('li');
-    const menuNav = document.createElement('a');
-    menuNav.innerHTML = 'Menu';
-
-    liNavOne.appendChild(menuNav);
-    ulNav.appendChild(liNavOne);
-    
-    menuNav.id = 'menu-anchor';
-
-    const liNavTwo = document.createElement('li');
-    const shopNav = document.createElement('a');
-
-    shopNav.id = 'store-locator-anchor';
-    shopNav.innerHTML = 'Store locator';
-
-    liNavTwo.appendChild(shopNav);
-    ulNav.appendChild(liNavTwo);
-
-    
-    const liNavThree = document.createElement('li');
-    const companyNav = document.createElement('a');
-    companyNav.innerHTML = 'Our company';
-    liNavThree.appendChild(companyNav);
-    ulNav.appendChild(liNavThree);
-    
-    const liNavFour = document.createElement('li');
-    const investorNav = document.createElement('a');
-    investorNav.innerHTML = 'Investor information';
-    liNavFour.appendChild(investorNav);
-    ulNav.appendChild(liNavFour);
-
-    // const liNavFive = document.createElement('li');
-    // const futureNav = document.createElement('a');
-    // futureNav.innerHTML = 'Future development';
-    // liNavFive.appendChild(futureNav);
-    // ulNav.appendChild(liNavFive);
-    
-    mainNav.appendChild(ulNav);
-    container.appendChild(mainNav);
-
-    // const containerSections = document.createElement('div');
-    // containerSections.classList.add('container-sections');
-    // const containerMenu = document.createElement('p');
-    // containerMenu.innerHTML = 'Menu';
-    // containerSections.appendChild(containerMenu);
-    // const containerStore = document.createElement('p');
-    // containerStore.innerHTML = 'Store Locator';
-    // containerSections.appendChild(containerStore);
-   
-   
-    // const containerCompany = document.createElement('p');
-    // const containerInvestors = document.createElement('p');
-    // const containerFutureDev = document.createElement('p');
 
     //English menu separator
     const separatorDiv = document.createElement('div');
@@ -199,34 +119,19 @@ export default function pageLoad() {
     foodGridOuter.appendChild(foodGridInner);
     menuRightHalf.appendChild(foodGridOuter);
 
-    //add images to dish divs!
-
-    // Let's compare two ways of doing this:
-
-    //We have placed the 1st dish as a bg img on the CSS.
-    //We can also just switch the createElement('div')'s for
-    //createElement('img') and see what happens 
-
-
-    // const gyumeshiPic = new Image();
-    // gyumeshi.src = Gyumeshi;
-    
-
-
-
 
     //class lists
-    background.classList.add('background');
+    background.classList.add('background-invisible');
+
 
     // main.appendChild(background);
     content.appendChild(background);
-    background.appendChild(mainHeader);
-    mainHeader.appendChild(container);
     // container.append(containerSections);
     separatorDiv.appendChild(ramenIcon);
     separatorDiv.appendChild(menuLanguageText);
     background.appendChild(separatorDiv);
     background.appendChild(menuContainer);
-    
-    return content;
+    bgLayout.appendChild(content);  
+
+    return bgLayout;
 } 
