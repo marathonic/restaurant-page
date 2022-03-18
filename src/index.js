@@ -1,19 +1,21 @@
-import menu from './page-load.js';
+import './style.css';
+import './style-store-locator.css';
+import pageLoad from './page-load.js';
 import storeLocator from './storeLocator.js';
-import clearBody from './makeBody.js';
+import clearBody from './makeBody';
 
-window.addEventListener('DOMContentLoaded', menu());
+window.addEventListener('DOMContentLoaded', pageLoad());
 
 document.querySelector('#store-locator-anchor')
         .addEventListener('click', function(){
-            clearBody();
+            // clearBody();
             storeLocator();
         });
 
 document.querySelector('#menu-anchor')
-        .addEventListener('click', function(){
-            clearBody();
-            menu();
+        .addEventListener('click',function(){
+            // clearBody();
+            pageLoad();
         })
 
 // !!!!!! THIS GOES BEFORE ANYTHING ELSE:

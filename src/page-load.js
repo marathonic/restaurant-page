@@ -19,8 +19,7 @@ import KorMenu from './img/menu-select/kor.jpg';
 // SEVERAL SMALLER FUNCTIONS, EACH APPENDING SOMETHING
 // TO OUR BACKGROUND. THEN, RUN ALL THE FUNCTIONS IN INDEX.JS
 
-export default function menu() {
-
+export default function pageLoad() {
     // alert('TEST');
     const content = document.createElement('div');
     document.body.appendChild(content);
@@ -54,13 +53,13 @@ export default function menu() {
     
     const liNavOne = document.createElement('li');
     const menuNav = document.createElement('a');
-    
-    menuNav.id = 'menu-anchor';
     menuNav.innerHTML = 'Menu';
 
     liNavOne.appendChild(menuNav);
     ulNav.appendChild(liNavOne);
     
+    menuNav.id = 'menu-anchor';
+
     const liNavTwo = document.createElement('li');
     const shopNav = document.createElement('a');
 
@@ -228,8 +227,6 @@ export default function menu() {
     separatorDiv.appendChild(menuLanguageText);
     background.appendChild(separatorDiv);
     background.appendChild(menuContainer);
-  
-    console.log('how many times does this run?');
-
+    
     return content;
 } 

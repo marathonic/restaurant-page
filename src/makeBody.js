@@ -1,3 +1,5 @@
-export default function clearBody() {
+export default function clearBody
+
+() {
    document.body.innerHTML = '';
 }
