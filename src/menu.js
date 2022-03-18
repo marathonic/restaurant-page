@@ -13,22 +13,11 @@ import Drinks from './img/menu-eng/drinks.png';
 import EngMenu from './img/menu-select/en.jpg';
 import KorMenu from './img/menu-select/kor.jpg';
 
-
-
-// WE MAY VERY WELL WISH TO SEPARATE THIS INTO 
-// SEVERAL SMALLER FUNCTIONS, EACH APPENDING SOMETHING
-// TO OUR BACKGROUND. THEN, RUN ALL THE FUNCTIONS IN INDEX.JS
-
 export default function menu() {
 
-    // alert('TEST');
     const content = document.createElement('div');
     document.body.appendChild(content);
     const background = document.createElement('div');
-
-    //Navigation bar, or container
-    // const headerBackground = document.createElement('div');
-    //                     headerBackground.classList.add('header-bar');
 
     //the matsuya logo
     const matsuyaLogo = new Image();
@@ -54,19 +43,15 @@ export default function menu() {
     
     const liNavOne = document.createElement('li');
     const menuNav = document.createElement('a');
-    
-    menuNav.id = 'menu-anchor';
     menuNav.innerHTML = 'Menu';
-
     liNavOne.appendChild(menuNav);
     ulNav.appendChild(liNavOne);
     
     const liNavTwo = document.createElement('li');
     const shopNav = document.createElement('a');
+    const iconNavTwo = document.createElement('li');
 
-    shopNav.id = 'store-locator-anchor';
     shopNav.innerHTML = 'Store locator';
-
     liNavTwo.appendChild(shopNav);
     ulNav.appendChild(liNavTwo);
 
@@ -83,28 +68,9 @@ export default function menu() {
     liNavFour.appendChild(investorNav);
     ulNav.appendChild(liNavFour);
 
-    // const liNavFive = document.createElement('li');
-    // const futureNav = document.createElement('a');
-    // futureNav.innerHTML = 'Future development';
-    // liNavFive.appendChild(futureNav);
-    // ulNav.appendChild(liNavFive);
     
     mainNav.appendChild(ulNav);
     container.appendChild(mainNav);
-
-    // const containerSections = document.createElement('div');
-    // containerSections.classList.add('container-sections');
-    // const containerMenu = document.createElement('p');
-    // containerMenu.innerHTML = 'Menu';
-    // containerSections.appendChild(containerMenu);
-    // const containerStore = document.createElement('p');
-    // containerStore.innerHTML = 'Store Locator';
-    // containerSections.appendChild(containerStore);
-   
-   
-    // const containerCompany = document.createElement('p');
-    // const containerInvestors = document.createElement('p');
-    // const containerFutureDev = document.createElement('p');
 
     //English menu separator
     const separatorDiv = document.createElement('div');
@@ -166,11 +132,8 @@ export default function menu() {
     const gyumeshi = new Image();
     gyumeshi.src = Gyumeshi;
     
-    //TRYING OUT SECOND IMG METHOD
     const curry = new Image();
     curry.src = Curry;
-
-    //THIS SECOND WAY LOOKS A LOT BETTER!
 
 
     const bowl = new Image();
@@ -200,36 +163,18 @@ export default function menu() {
     foodGridOuter.appendChild(foodGridInner);
     menuRightHalf.appendChild(foodGridOuter);
 
-    //add images to dish divs!
 
-    // Let's compare two ways of doing this:
-
-    //We have placed the 1st dish as a bg img on the CSS.
-    //We can also just switch the createElement('div')'s for
-    //createElement('img') and see what happens 
-
-
-    // const gyumeshiPic = new Image();
-    // gyumeshi.src = Gyumeshi;
-    
-
-
-
-
-    //class lists
     background.classList.add('background');
 
-    // main.appendChild(background);
     content.appendChild(background);
     background.appendChild(mainHeader);
     mainHeader.appendChild(container);
-    // container.append(containerSections);
+    
     separatorDiv.appendChild(ramenIcon);
     separatorDiv.appendChild(menuLanguageText);
     background.appendChild(separatorDiv);
     background.appendChild(menuContainer);
-  
-    console.log('how many times does this run?');
-
+    
     return content;
-} 
+
+}
