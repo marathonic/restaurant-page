@@ -32,7 +32,7 @@ export default function pageLoad() {
     ramenIcon.src = Ramen;
     ramenIcon.classList.add('small-icon');
     const menuLanguageText = document.createElement('p');
-    menuLanguageText.innerHTML = 'English Menu';
+    menuLanguageText.innerHTML = 'Menu';
     menuLanguageText.classList.add('menu-language-text');
 
     // //Menu divs
@@ -134,14 +134,18 @@ export default function pageLoad() {
 
     
     content.appendChild(menuContainer);
-  
-    const header = document.querySelector('#m-header');
-    header.appendChild(backgroundLayout);
 
+    const footy = document.createElement('footer');
+    footy.id = 'footy';
+    background.appendChild(footy);
 
-    background.appendChild(content);
+    const menuContainerFoot = document.createElement('div');
+    menuContainerFoot.id = 'menu-container-foot';
+    menuContainer.appendChild(menuContainerFoot)
+
     // bgLayout.appendChild(content);  
-    bgLayout.appendChild(background)
+
+    //footer
 
     return bgLayout;
 } 

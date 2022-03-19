@@ -5,15 +5,16 @@ import storeLocator from './storeLocator.js';
 import clearBody from './makeBody';
 import createHeader from './createHeader';
 import createBackground from './createBackground';
+import createFooter from './createFooter';
 
 //ANOTHER OPTION WOULD BE TO APPEND THE HEADER FIRST:
 //APPEND THE BACKGROUND 
 //THEN THE HEADER  
 
 window.addEventListener('DOMContentLoaded', function() {
-    document.body.appendChild(createHeader());
-    document.body.appendChild(createBackground());
-    document.body.appendChild(pageLoad());
+    createHeader();
+    pageLoad();
+    createFooter();
 })
 
 // window.addEventListener('DOMContentLoaded', pageLoad());
